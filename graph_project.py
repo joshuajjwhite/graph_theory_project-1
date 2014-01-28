@@ -4,5 +4,5 @@
     DRIVING ROUTE FINDER
     Part 1: Server
 
-    Par 2: Client
+    Part 2: Client
 """
