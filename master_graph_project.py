@@ -7,7 +7,8 @@
     Part 2: Client
 """
 import graph_module
-
+import sys
+import string
 
 # How to use imported modules.
 def howto():
@@ -57,12 +58,6 @@ and terminated with a new line. For example,
 
 After printing the path, the server should listen again for another route finding request.
 """
-
-# MAIN LOOP
-if __name__ == "__main__":
-    # Code for processing route finding requests here
-    
-
 def cost_distance(e):
     """
     cost_distance returns the straight-line distance between the two
@@ -70,7 +65,24 @@ def cost_distance(e):
     If you compute the straight-line distance directly using lat and long,
     then the distance will be in units of 100,000ths of a degree.
     """
-
     pass
+
+def translate_input():
+    # Sample Input: 5365488 -11333914 5364727 -11335890
+    for line in sys.stdin:
+        inputs = str.split(line)
+        return inputs
+
+# MAIN LOOP
+if __name__ == "__main__":
+    # Code for processing route finding requests here
+    print(translate_input())
+
+
+
+
+
+
+
 
 
