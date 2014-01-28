@@ -350,3 +350,17 @@ def count_components(g):
             all_verts.remove(j)
         counter += 1
     return counter
+
+def least_cost_path(G, start, dest, cost):
+    """
+    least_cost_path returns a least cost path in the digraph G from vertex
+    start to vertex dest, where costs are defined by the cost function.
+    cost should be a function that takes a single edge argument and returns
+    a real-valued cost.
+    if there is no path, then it returns None
+    the path from start to start is [start]
+
+
+    """
+    pass
+
