@@ -31,6 +31,19 @@ def howto():
 Your server on start-up will need to load the Edmonton map data into a digraph object,
 and store the ancillary information about street names and vertex locations. 
 """
+def load_data(g,filename):
+    i = 0
+    p = 0
+    f = open(filename, 'r')
+    for line in f:
+        data = line.split(",")
+        if data[0] == 'V':
+            g.add_vertex(data[1])
+        if data[0] == 'E':
+            g.add_edge((data[1],data[2]))
+        i = i + 1
+        p = (i/186445)*100
+        
 
 # Receive and process request
 """
@@ -69,10 +82,20 @@ def cost_distance(e):
 
 def translate_input():
     # Sample Input: 5365488 -11333914 5364727 -11335890
+    """
+    translate_input()
+    5365488 -11333914 5364727 -11335890
+    [5365488, -11333914, 5364727, -11335890]
+    """
     for line in sys.stdin:
         inputs = str.split(line)
         return inputs
 
+#Start of Programs ###################
+g = graph_module.Graph()
+load_data(g,"edmonton_roads.txt")
+
+print(g.is_vertex('1222795374'))
 # MAIN LOOP
 if __name__ == "__main__":
     # Code for processing route finding requests here
